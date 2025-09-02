@@ -10,3 +10,5 @@ jobs:
         run: pwd
       - name: test affichage
         run: ls
+      - name: Read file
+        run: cat README.md
