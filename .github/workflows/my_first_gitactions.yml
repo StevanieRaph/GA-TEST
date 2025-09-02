@@ -1,9 +1,8 @@
-
 name: test
 on: push
 jobs:
   docker_test:
     runs-on: ubuntu-latest
     steps:
-      - name: affichage version docker
-        run: docker -v
+      - name: affichage chemin
+        run: pwd
