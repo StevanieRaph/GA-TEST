@@ -1,8 +1,12 @@
 name: test
 on: push
 jobs:
-  docker_test:
+  test_machine_runner:
     runs-on: ubuntu-latest
     steps:
-      - name: affichage chemin
+      - name: test docker
+        run: docker -v
+      - name: test chemin par defaut
         run: pwd
+      - name: test affichage
+        run: ls
