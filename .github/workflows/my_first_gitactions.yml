@@ -4,11 +4,7 @@ jobs:
   test_machine_runner:
     runs-on: ubuntu-latest
     steps:
-      - name: test docker
-        run: docker -v
-      - name: test chemin par defaut
-        run: pwd
-      - name: test affichage
-        run: ls
+      - name: Telecharger code
+        uses: actions/checkout@v4
       - name: Read file
         run: cat README.md
