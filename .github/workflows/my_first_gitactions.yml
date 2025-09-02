@@ -6,5 +6,7 @@ jobs:
     steps:
       - name: Telecharger code
         uses: actions/checkout@v4
-      - name: Read file
-        run: cat README.md
+      - name: Read file et afficher version docker
+        run: |
+          cat README.md
+          docker -v
