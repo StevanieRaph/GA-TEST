@@ -1,1 +1,13 @@
 
+name: test
+on: push
+jobs:
+  mon_premier_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: affichage checkout
+        run: echo "affichage du checkout"
+      - name: installation
+        run: echo "installation node"
+      - name: upload
+        run: echo "upload code source"
