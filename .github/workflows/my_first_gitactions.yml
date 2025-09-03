@@ -3,7 +3,7 @@ name: Generate ASCII Artwork
 on: push
 
 jobs:
-  build_job_1:
+  build_cowsay:
     runs-on: ubuntu-latest
     steps:
     - name: Install Cowsay Program
@@ -21,9 +21,9 @@ jobs:
         name: dragon-file
         path: dragon.txt
 
-  test_job_2:
+  test_cowsay:
     runs-on: ubuntu-latest
-    needs: build_job_1
+    needs: build_cowsay
     steps:
     - name: Download dragon.txt artifact
       uses: actions/download-artifact@v4
@@ -44,7 +44,7 @@ jobs:
 
   deploy_job_3:
     runs-on: ubuntu-latest
-    needs: test_job_2
+    needs: test_cowsay
     steps:
     - name: Download tested file
       uses: actions/download-artifact@v4
