@@ -10,7 +10,7 @@ jobs:
         run: sudo apt-get install cowsay -y
       - name: Executer Cowsay
         run: cowsay -f dragon "Bonjour DRAGON" > dragon.txt
-      - name: Read File
+      - name: Lire fichier
         run: cat dragon.txt
-      - name: Checkout Repo Files
+      - name: Lister les fichiers
         run: ls
