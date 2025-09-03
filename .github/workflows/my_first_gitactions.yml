@@ -1,18 +1,32 @@
 name: cowsay
 on: push
 jobs:
-  test_cowsay:
+  task1_cowsay:
     runs-on: ubuntu-latest
     steps:
       - name: Telecharger code
         uses: actions/checkout@v4
+        
       - name: Installer Cowsay
         run: sudo apt-get install cowsay -y
+        
       - name: Executer Cowsay
         run: cowsay -f dragon "Bonjour DRAGON" > dragon.txt
+        
       - name: Afficher dragon
         run: cowsay -f dragon "Bonjour DRAGON"
+        
+      - name: Voir si le fichier exist
+        run: grep -i "dragon" dragon.txt      
+        
       - name: Capturer fichier
         run: cat dragon.txt
+        
       - name: Lister les fichiers
-        run: ls
+        run: ls -ltra
+        
+  task2_ascii:
+    runs-on: ubuntu-latest
+    steps:
+    - name: List Repo Files
+      run: ls
