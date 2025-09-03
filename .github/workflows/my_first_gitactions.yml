@@ -25,15 +25,9 @@ jobs:
       - name: Lister les fichiers
         run: ls -ltra
         
-      - name: Afficher chemin
-        run: pwd    
-        
   task2_ascii:
     runs-on: ubuntu-latest
     needs: task1_cowsay
     steps:
     - name: List Repo Files
       run: ls
-      
-    - name: Afficher chemin
-      run: pwd          
