@@ -1,12 +1,16 @@
-name: test
+name: cowsay
 on: push
 jobs:
-  test_machine_runner:
+  test_cowsay:
     runs-on: ubuntu-latest
     steps:
       - name: Telecharger code
         uses: actions/checkout@v4
-      - name: Read file et afficher version docker
-        run: |
-          cat README.md
-          docker -v
+      - name: Installer Cowsay
+        run: sudo apt-get install cowsay -y
+      - name: Executer Cowsay
+        run: cowsay -f dragon "Bonjour DRAGON" > dragon.txt
+      - name: Read File
+        run: cat dragon.txt
+      - name: Checkout Repo Files
+        run: ls
